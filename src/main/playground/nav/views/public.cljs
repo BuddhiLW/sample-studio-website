@@ -30,10 +30,10 @@
 (defn public
   []
   (let [active-page @(rf/subscribe [:active-page])
-        nav-items [{:id :become-a-chef
+        nav-items [{:id :about-us
                     :name "Sobre nós"
-                    :href (router/path-for :become-a-chef)
-                    :dispatch #(rf/dispatch [:set-active-nav :become-a-chef])}
+                    :href (router/path-for :about-us)
+                    :dispatch #(rf/dispatch [:set-active-nav :about-us])}
                    {:id :recipes
                     :name "Cursos"
                     :href (router/path-for :recipes)

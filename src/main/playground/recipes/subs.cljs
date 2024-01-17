@@ -2,9 +2,39 @@
   (:require [re-frame.core :as rf]))
 
 (rf/reg-sub
+ :footer
+ (fn [db _]
+   (:footer db)))
+
+(rf/reg-sub
+ :footer/socials
+ :<- [:footer]
+ (fn [footer _]
+   (:socials footer)))
+
+(rf/reg-sub
+ :footer/schedule
+ :<- [:footer]
+ (fn [footer _]
+    (:schedule footer)))
+
+(rf/reg-sub
+ :footer/address
+ :<- [:footer]
+ (fn [footer _]
+    (:address footer)))
+
+(rf/reg-sub
+ :footer/google-maps
+ :<- [:footer]
+ (fn [footer _]
+    (:google-maps footer)))
+
+(rf/reg-sub
  :recipes
  (fn [db _]
    (:recipes db)))
+
 
 (rf/reg-sub
  :filter/draft

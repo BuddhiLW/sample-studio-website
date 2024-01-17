@@ -23,9 +23,9 @@
    [playground.auth.views.log-in :refer [log-in]]
    [playground.auth.events]
    [playground.auth.subs]
-   ;--- become-a-chef ---
-   [playground.become-a-chef.views.become-a-chef :refer [become-a-chef]]
-   [playground.become-a-chef.events]
+   ;--- about-us ---
+   [playground.about-us.views.about-us :refer [about-us]]
+   [playground.about-us.events]
    ;--- validation/errors ---
    [playground.validation.events]
    [playground.validation.subs]
@@ -66,7 +66,7 @@
     :profile           [profile]
     :sign-up           [sign-up]
     :log-in            [log-in]
-    :become-a-chef     [become-a-chef]
+    :about-us          [about-us]
     :inbox             [inbox-page]
     :inboxes           [inboxes-page]
     :recipes           [recipes-page]
@@ -75,7 +75,7 @@
     :stripe            [stripe-page]
     :upload-file       [upload-file-page]
     :free-paywall      [free-paywall-page]
-    [become-a-chef]))
+    [about-us]))
 
 (defn- main []
   (let [active-page @(rf/subscribe [:active-page])]

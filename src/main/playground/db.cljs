@@ -4,7 +4,8 @@
    [playground.spec :refer [check-spec-interceptor]]
    [re-frame.core :as rf]))
 
-(def initial-app-db {:auth    {:uid nil}
+(def initial-app-db {
+                     :auth    {:uid nil}
                      :errors  {}
                      :inboxes {}
                      :files {:path nil}
@@ -50,7 +51,23 @@
                                                       :saved   #{}
                                                       :inboxes {"mike@mailinator.com" {:id            :inbox-02
                                                                                        :notifications 6
-                                                                                       :updated-at    1538697210537}}}}})
+                                                                                       :updated-at    1538697210537}}}}
+                     :footer {:socials {:instagram "https://www.instagram.com/origenstattoopiercing/"
+                                        :facebook "https://www.facebook.com/origenstattoobarber"}
+                              :schedule {:days "De Segunda à Sexta"
+                                         :hours "10h00m às 21h00m"
+                                         :extra "Sábados, 10h00m às 15h00m"}
+                              ;; Rua Santos Pereira, 185, Cidade Nova - Centro, Franca - SP, 14401-130
+                              :address {
+                                        :state "SP"
+                                        :city "Franca"
+                                        :block "Centro"
+                                        :street "Rua Santos Pereira"
+                                        :number "185"
+                                        :cep "14401-130"
+                                        :extra ""}
+                              :google-maps {:src "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.3558449771936!2d-47.397720423884856!3d-20.5326163573583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b0a7cd38301727%3A0x3b9bd5719cb174fd!2sOrigens%20Tattoo%20Barber!5e0!3m2!1sen!2sbr!4v1705452511957!5m2!1sen!2sbr"}}})
+                     
 
 (rf/reg-event-fx
  :initialize-db
@@ -346,3 +363,28 @@
                                          :inboxes {"mike@mailinator.com" {:id            :inbox-02
                                                                           :notifications 6
                                                                           :updated-at    1538697210537}}}}}})
+
+;; LOCALIZAÇÃO GOOGLE MAPS
+;; https://www.google.com/maps/dir//origens+tattoo+e+piercing/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94b0a7cd38301727:0x3b9bd5719cb174fd?sa=X&ved=2ahUKEwjhjNyTps-DAxXJqpUCHeOxDU8Q9Rd6BAhFEAA
+;; Instagram estudio: https://www.instagram.com/origenstattoopiercing/
+;; Instagem:https://www.instagram.com/origenstattoopiercing/
+;; Facebook:https://www.facebook.com/origenstattoobarber
+;; 
+;; Whatsapp: 
+;; RafaelAndrad: https://api.whatsapp.com/send?phone=5516981313890&text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Rafael%20Andrade%20Tattoo.
+;; Pedro Nob: https://api.whatsapp.com/send?phone=5516981313890&text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Rafael%20Andrade%20Tattoo.
+;; Tacio Lobato: https://api.whatsapp.com/send/?phone=5516997219901&text&type=phone_number&app_absent=0
+;; Luciano Duarte: https: //l.instagram.com/?u=https%3A%2F%2Fwa.me%2F5516993510565&e=AT0NzhFsYI5Mr1NoN4Tvr-nu-EdvPGPAhh7peOQYBaFJwy5e0M-75psAhuNqihiuUtsNLdMfxrUKv1iPy585jE0QElz1VqPqkbVQR6wxoPGUKDIa0XARNA
+;; Patrik Bonacio: https://wa.me/5516994605806
+;; 
+;; Instagram: 
+;; Rafael Andrade:https://www.instagram.com/rafaandradetattoo/
+;; Pedro Nób: https://www.instagram.com/pedro_nob_016/
+;; Tacio Lobato: https://www.instagram.com/tacio_lobato/  
+;; Luciano Duarte https://www.instagram.com/lucianoduarteoficialtattoo?igsh=MTlid2lyNW9zNTJ6cg==
+;; Patrik Bonacio: https://www.instagram.com/bonacinitattoo?igsh=eDQyOXV6cXB3OGJt
+;; 
+;; hr de funcionamento 
+;; seg - sex: 10:00 - 21:00
+;; sab. 10:00 - 15:00
+;; Domingo fechado

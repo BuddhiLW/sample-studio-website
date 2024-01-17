@@ -1,4 +1,4 @@
-(ns playground.become-a-chef.events
+(ns playground.about-us.events
   (:require
    [playground.spec :refer [check-spec-interceptor]]
    [re-frame.core :as rf]))
