@@ -31,11 +31,12 @@
        [:> Button {:my "20"
                    :variant "light"
                    :aria-label "Back"}
-         [:> Avatar {:src "/img/logo-expedicao-cafe.jpg"
-                     :sx {:width 120
-                          :height 120}}]
+         #_[:> Avatar {:src "/img/logo-expedicao-cafe.jpg"
+                       :sx {:width 120
+                            :height 120}}]
          #_[:> AdjustIcon {:sx {:font-size "2.5em"}}]])]
-    [:> Box {:justify-content "center"}
+    [:> Box {:justify-content "center"
+             :opacity 1}
      (if (= (type center) (type "String"))
        [:> Typography {:variant "h1"
                        :font-style "italic"

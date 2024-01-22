@@ -31,21 +31,21 @@
   []
   (let [active-page @(rf/subscribe [:active-page])
         nav-items [{:id :about-us
-                    :name "Sobre nós"
+                    :name "Sobre"
                     :href (router/path-for :about-us)
                     :dispatch #(rf/dispatch [:set-active-nav :about-us])}
                    {:id :recipes
-                    :name "Cursos"
+                    :name "Profissionais"
                     :href (router/path-for :recipes)
                     :dispatch #(rf/dispatch [:set-active-nav :recipes])}
                    {:id :sign-up
-                    :name "Consultoria"
+                    :name "Galeria"
                     :href (router/path-for :sign-up)
                     :dispatch #(rf/dispatch [:set-active-nav :sign-up])}
-                   {:id :log-in
-                    :name "Comercialização"
-                    :href (router/path-for :log-in)
-                    :dispatch #(rf/dispatch [:set-active-nav :log-in])}]]
+                   #_{:id :log-in
+                      :name "Comercialização"
+                      :href (router/path-for :log-in)
+                      :dispatch #(rf/dispatch [:set-active-nav :log-in])}]]
      [:<>
        ;; [drop-menu nav-items]
        [:> AppBar {:position "static"}

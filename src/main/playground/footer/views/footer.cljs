@@ -16,7 +16,8 @@
      [:> Grid {:sx {:background-color "primary.contrast"}}
       [:> Box {:sx {:background-color "primary.main"}
                :py "1rem"
-               :mt "1rem"}
+               :mt "1rem"
+               :color "#f8fafc"}
        [:> Typography {:variant "body1"
                        :align "center"}
 
@@ -64,24 +65,14 @@
                 {:class "relative transition-all ease-in duration-75 bg-inherit dark:bg-gray-900 group-hover:bg-opacity-0"}
                 "Instagram"]]
             [:> IconButton {:as "a"
-                            :href instagram
-                            :aria-label "Instagram"
+                            :href facebook
+                            :aria-label "Facebook"
                             :target "_blank"
                             :class "text-slate-950 bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 focus:ring-4 text-sm"}
-             [:> mui-icons/Facebook "Facebook"]]
-
-            #_[:a {:href instagram :aria-label "Instagram" :target "_blank"}
-               [:div
-                {:class "text-gray-900 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 px-2"}
-               ;; w-min h-min flex items-center hover:underline rounded-md text-black transition hover:translate-x-2 hover:no-underline
-                [:i {:class "fa-brands fa-instagram relative transition-all ease-in duration-75 bg-inherit dark:bg-gray-900 group-hover:bg-opacity-0"}]]]])]
-            ;; text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-center
-            ;; text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-center
-            ;; [:a {:href facebook
-            ;;      :style {:height "40px"}}
-            ;;   [:i {:class "fa-brands fa-facebook"}]]])]
+             [:> mui-icons/Facebook "Facebook"]]])]
        [:> Typography {:variant "body2"
-                       :align "center"}
+                       :align "center"
+                       :color "#f8fafc"}
         "© 2024 Origens Tattoo Barber. Todos os direitos reservados."]]]))
     
 

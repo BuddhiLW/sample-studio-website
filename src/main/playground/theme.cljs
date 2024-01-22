@@ -2,21 +2,6 @@
   (:require
    [clojure.string :as string]
    ["@mui/material/styles" :refer [createTheme]]))
-   ;; ["react-bootstrap" :as bt]))
-
-;; (def cheffy-theme
-;;   [:<>
-;;    [:> bt/style
-;;     {:black "#243B53"
-;;      :primary "#27AB83"
-;;      :secondary "#F2F2F2"
-;;      :light "#F2F2F2"
-;;      :dark "#243B53"
-;;      :borderRadius "14px"
-;;      :borderRadiusSm "8px"
-;;      :borderRadiusLg "20px"
-;;      :modalHeaderBorderColor "white"}]])
-;; (string/join ", " ["a" "b" "c" "d" "e"])
 
 (def theme (createTheme
             (clj->js
@@ -24,7 +9,7 @@
                                                     ["Playfair Display"])}
               :palette
                {:primary
-                {:main "#BBA987"
+                {:main "#0B1A2F"
                  :black "#130905"
                  :primary "#27AB83"
                  :secondary "#F7D070"
@@ -32,7 +17,7 @@
                  :dark "#2F3FFF"
                  :white "#FFFAFA"
                  :form "#F8F8FF"
-                 :main-background "#C8C095" ;; #AA9F63
+                 :main-background "#FFFAFA"
                  :borderRadius "20px"
                  :borderRadiusSm "10px"
                  :borderRadiusLg "18px"
@@ -48,6 +33,7 @@
                 {:main "#FFEFEF"}}
                {:card-title
                 {:main "#FFEFEF"}}})))
+               
 
 (def buttons (createTheme
               (clj->js
@@ -79,7 +65,7 @@
                   {::font-size "1.4rem"}}}}}}
             :palette
             {:primary
-             {:main "#000"
+             {:main "#596469"
               :secondary "#FFFAFA"
               :tertiary "#F0EBE3"}}})))
 
@@ -100,8 +86,8 @@
                         {:font-size "1.2rem"}}}}
                      :palette
                      {:primary
-                      {:main "#F0EBE3"
-                       :contrast "#BBA987"
+                      {:main "#6F7071"
+                       :contrast "#383F4C"
                        :main-background "#000000"
                        :tertiary "#4433FF"}}})))
 

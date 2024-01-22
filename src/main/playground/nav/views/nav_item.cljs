@@ -15,14 +15,13 @@
                 :ml 2
                 :pb 10
                 :sx {"&:hover" {:background-color "primary.light"}
-                     ;; :font-size "0.6em"
                      :as "a"}
                 :href href}
      (if (= active-page id)
        [:> Typography {:variant "h5"
                        :color "primary.secondary"
                        :sx {"&:hover" {:color "primary.tertiary"}}
-                       :border-bottom "2px solid #102A43"}
+                       :border-bottom "2px solid #F0EBE3"}
         name]
        [:> Typography {:variant "h6"
                        :sx {"&:hover" {:color "primary.secondary"}}
