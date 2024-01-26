@@ -40,8 +40,8 @@
                     :dispatch #(rf/dispatch [:set-active-nav :recipes])}
                    {:id :sign-up
                     :name "Galeria"
-                    :href (router/path-for :sign-up)
-                    :dispatch #(rf/dispatch [:set-active-nav :sign-up])}
+                    :href (router/path-for :gallery)
+                    :dispatch #(rf/dispatch [:set-active-nav :gallery])}
                    #_{:id :log-in
                       :name "Comercialização"
                       :href (router/path-for :log-in)

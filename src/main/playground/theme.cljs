@@ -5,35 +5,49 @@
 
 (def theme (createTheme
             (clj->js
-             {:typography {:fontFamily (string/join ","
-                                                    ["Playfair Display"])}
+             {:MuiTypography {:styleOverrides
+                              {:root
+                               {:breakpoints
+                                {:xs
+                                 {:font-size "0.5rem"}
+                                 :sm
+                                 {:font-size "1rem"}
+                                 :md
+                                 {:font-size "1.4rem"}
+                                 :lg
+                                 {:font-size "1.6rem"}}}}}
+              :typography {:fontFamily (string/join ","
+                                                    ["Playfair Display"])
+                           :font-size "1rem"
+                           "@media (min-width:600px)" {:font-size "1.5rem"}}
+
               :palette
-               {:primary
-                {:main "#0B1A2F"
-                 :black "#130905"
-                 :primary "#27AB83"
-                 :secondary "#F7D070"
-                 :light "#D9E2EC"
-                 :dark "#2F3FFF"
-                 :white "#FFFAFA"
-                 :form "#F8F8FF"
-                 :main-background "#FFFAFA"
-                 :borderRadius "20px"
-                 :borderRadiusSm "10px"
-                 :borderRadiusLg "18px"
-                 :modalHeaderBorderColor "white"}}
-               {:secondary
-                {:main "#651fff"
-                 :light "#0066ff"
-                 :dark "#ff5500"
-                 :contrastText "#ffcc00"}}
-               {:tertiary
-                {:main "#e91e63"}}
-               {:card-title
-                {:main "#FFEFEF"}}
-               {:card-title
-                {:main "#FFEFEF"}}})))
-               
+              {:primary
+               {:main "#0B1A2F"
+                :black "#130905"
+                :primary "#27AB83"
+                :secondary "#F7D070"
+                :light "#D9E2EC"
+                :dark "#2F3FFF"
+                :white "#FFFAFA"
+                :form "#F8F8FF"
+                :main-background "#FFFAFA"
+                :borderRadius "20px"
+                :borderRadiusSm "10px"
+                :borderRadiusLg "18px"
+                :modalHeaderBorderColor "white"}}
+              {:secondary
+               {:main "#651fff"
+                :light "#0066ff"
+                :dark "#ff5500"
+                :contrastText "#ffcc00"}}
+              {:tertiary
+               {:main "#e91e63"}}
+              {:card-title
+               {:main "#FFEFEF"}}
+              {:card-title
+               {:main "#FFEFEF"}}})))
+
 
 (def buttons (createTheme
               (clj->js
@@ -57,12 +71,14 @@
              {:styleOverrides
               {:root
                {:breakpoints
-                 {:xs
-                  {:font-size "1rem"}
-                  :sm
-                  {::font-size "1.2rem"}
-                  :md
-                  {::font-size "1.4rem"}}}}}}
+                {:xs
+                 {:font-size "0.5rem"}
+                 :sm
+                 {:font-size "1.5rem"}
+                 :md
+                 {:font-size "2rem"}
+                 :lg
+                 {:font-size "3rem"}}}}}}
             :palette
             {:primary
              {:main "#596469"
@@ -73,17 +89,18 @@
             (clj->js
              {:palette
               {:primary
-                {:main "#3A3F3F"
-                 :light "#FFFAFA"}}})))
+               {:main "#3A3F3F"
+                :light "#FFFAFA"}}})))
 
 
 (def footer-theme (createTheme
                    (clj->js
-                    {:components
-                     {:MuiTypography
-                      {:styleOverrides
-                       {:root
-                        {:font-size "1.2rem"}}}}
+                    {
+                     ;; :components
+                     ;; {:MuiTypography
+                     ;;  {:styleOverrides
+                     ;;   {:root
+                     ;;    {:font-size "1.5rem"}}}}
                      :palette
                      {:primary
                       {:main "#6F7071"
@@ -91,3 +108,13 @@
                        :main-background "#000000"
                        :tertiary "#4433FF"}}})))
 
+(comment
+  {:breakpoints
+   {:xs
+    {:font-size "0.5rem"}
+    :sm
+    {:font-size "1.5rem"}
+    :md
+    {:font-size "2rem"}
+    :lg
+    {:font-size "3rem"}}})

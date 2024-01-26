@@ -56,47 +56,38 @@
    [playground.free-paywall.views.free-paywall :refer [free-paywall-page]]
    [playground.free-paywall.events]
    ;--- footer ---
-   [playground.footer.views.footer :refer [footer]]))
-
+   [playground.footer.views.footer :refer [footer]]
+   ;--- gallery ---
+   [playground.gallery.views.gallery :refer [gallery]]))
 
 ;; ---------- END requires ---------
 (defn pages
   [page-name]
-  (case page-name
-    :sign-up           [sign-up]
-    :log-in            [log-in]
-    :about-us          [about-us]
-    :recipes           [recipes-page]
-    :recipe            [recipe-page]
-    ;; :profile           [profile]
-    ;; :inbox             [inbox-page]
-    ;; :inboxes           [inboxes-page]
-    ;; :saved             [saved-page]
-    ;; :stripe            [stripe-page]
-    ;; :upload-file       [upload-file-page]
-    ;; :free-paywall      [free-paywall-page]
-    [about-us]))
+  [:> mui/Box
+    (case page-name
+      :sign-up           [sign-up]
+      :gallery           [gallery]
+      :log-in            [log-in]
+      :about-us          [about-us]
+      :recipes           [recipes-page]
+      :recipe            [recipe-page]
+      [about-us])])
 
 (defn- main []
   (let [active-page @(rf/subscribe [:active-page])]
-    [:div
+    [:<>
      [:> mui/CssBaseline]
      [:> mui/ThemeProvider {:theme theme}
       [:> mui/Grid {:background-color "primary.main-background"
                     :id "wrapper"
                     :container true
-                    :sx {:width "100vw"
+                    :sx {:max-width "100vw"
+                         :min-height "100vh"
+                         :overflow "hidden"
+                         ;; :flex-wrap "wrap"
                          :display "flex"
                          :flex-direction "column"}}
        [nav]
-       ;; [:> mui/Box {:py 1
-       ;;              :component "nav"
-       ;;              :variant "dense"
-       ;;              :fluid "false"
-       ;;              :display "flex"
-       ;;              :justify-content "flex-end"
-       ;;              :container "true"}
-       ;;  [:> mui/Box [nav]]]
        [pages active-page]
        [footer]]]]))
 
@@ -117,3 +108,14 @@
   annotation."
   []
   (render))
+
+;; Other pages
+;;
+;; -----------
+;; :profile           [profile]
+;; :inbox             [inbox-page]
+;; :inboxes           [inboxes-page]
+;; :saved             [saved-page]
+;; :stripe            [stripe-page]
+;; :upload-file       [upload-file-page]
+;; :free-paywall      [free-paywall-page]

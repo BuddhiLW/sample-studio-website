@@ -6,7 +6,7 @@
 (def routes ["/sample-studio-website/" {""                   :about-us
                                         "cursos/"           {"" :recipes
                                                              [:recipe-id] :recipe}
-                                        "consultoria"       :sign-up
+                                        "galeria"           :gallery
                                         "comercializacao"   :log-in}])
                   ;; "inbox/"            {"" :inboxes
                   ;;                      [:inbox-id] :inbox}

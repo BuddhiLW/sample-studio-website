@@ -12,7 +12,8 @@
 (defn about-us
   []
   [:> ThemeProvider {:theme cards}
-   [:> Card {:sx {:height "90vh"}}
+   [:> Card {:sx {:height {:xs "120vh"
+                           :sm "95vh"}}}
      [:> Box {:sx {:position "relative"
                    :height "100%"}}
       [:> CardMedia {:component "img"
@@ -27,31 +28,53 @@
                     :color "white"
                     :px "10px"}}
        [:> Grid {:container true
-                 :direction "row"
-                 :mb 3
-                 :sx {:height "75vh"}}
+                 :mb {:xs 1
+                      :sm 3}
+                 :mt {:xs 1
+                      :sm 3}
+                 :display "flex"
+                 :sx {:height {:xs "100%"}
+                      :display {:xs "flex"}
+                      :flex-direction {:xs "column"
+                                       :md "row"}
+                      :justify-content {:xs "center"
+                                        :md "center"}
+                      :align-items {:xs "left"
+                                    :md "center"}}}
         [:> Grid {:item true
-                  :xs 6
-                  :display "flex"
-                  :justify-content "center"
-                  :align-items "center"}
+                  ;; :xs 6
+                  :md 6
+                  :lg 4
+                  ;; :m
+                  ;; :mt 3}
+                  :display {:md "flex"}
+                  :justify-content {:md "center"}
+                  :align-items {:md "center"}}
          [:img  {:fit "contain"
-                 :class-name "rounded-full"
                  :src "/img/Fotos-Estudio/tatuadores/logo.jpg"
+                 :class-name "rounded-full"
                  :alt "Hand holding a cup of coffee"}]]
         [:> Grid {:item true
-                  :xs 6
-                  :display "flex"
-                  :sx {:flex-direction "column"}
-                  :justify-content "flex-end"}
-         [:> CardContent {:variant "body2"}
+                  ;; :xs 6
+                  :md 8
+                  ;; :md 6
+                  :pr {:md "0.2em"
+                       :lg "5rem"
+                       :xl "30em"}}
+                  ;; :sx {;;:flex-direction "column"
+                  ;;      ;; :xs {:px "1rem"}
+                  ;;      :display "flex"}}
+                       ;; :justify-content "flex-end"}}
+         [:> CardContent {:variant "body2"
+                          :sx {:max-width {:xs "95vw"
+                                           :md "100%"}}}
           [:> Box {:sx {:bgcolor "primary.light"
-                        :max-width 700
                         :box-shadow 1
                         :border-radius 2
                         :px 2
                         :pb 2
-                        :pt 1}}
+                        :pt 1
+                        :mx "auto"}}
            [:> Typography {:class "text-gray"
                            :variant "h2"
                            :mb 3

@@ -23,6 +23,16 @@
   height: auto;
 }
 
+/* search query xs queries: */
+@media (max-width: 400px) {
+    .MuiTypography-p {
+        font-size: 0.1rem !important;
+    }
+    .MuiTypography-h5 {
+        font-size: 1.2rem;
+    }
+}
+
 /* .banner::after { */
 /*     content: ''; */
 /*     width: 100%; */

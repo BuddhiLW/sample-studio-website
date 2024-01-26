@@ -14,18 +14,31 @@
         google-maps @(rf/subscribe [:footer/google-maps])]
     [:> ThemeProvider {:theme footer-theme}
      [:> Grid {:sx {:background-color "primary.contrast"}}
-      [:> Box {:sx {:background-color "primary.main"}
+      [:> Box {:sx {:background-color "primary.main"
+                    #_{:xs "primary.main"
+                       :md "primary.contrast"}}
+
                :py "1rem"
                :mt "1rem"
                :color "#f8fafc"}
        [:> Typography {:variant "body1"
-                       :align "center"}
-
+                       :sx {:pl {:xs "1rem"
+                                 :md "0rem"}
+                            :text-align {:md "center"}
+                            :align {:xs "left"
+                                    :md "center"}
+                            :font-size {:xs "0.5rem"
+                                        :md "1.5rem"}}}
         "De Segunda à Sexta, 8h00m às 16h00m"]
        [:> Typography {:variant "body2"
-                       :align "center"}
-          (str (:street address))
-        ;; "Rua Diogo Feijó, 1682- Sala 1; Estação, Franca - SP"
+                       :sx {:pl {:xs "1rem"
+                                 :md "0rem"}
+                            :text-align {:md "center"}
+                            :align {:xs "left"
+                                    :md "center"}
+                            :font-size {:xs "0.5rem"
+                                        :md "1.3rem"}}}
+          (str (:street address) ", " (:number address) ", " (:city address) " - " (:state address))
           [:br]
           "14405-212"]]
       [:> Box {:sx {:display "flex"}
@@ -41,9 +54,13 @@
                 :allowfullscreen ""
                 :loading "lazy"
                 :referrerpolicy "no-referrer-when-downgrade"}]]]
-     [:> Box {:sx {:background-color "primary.main"}
-              :py "1rem"
-              :mt "1rem"}
+     [:> Grid {:sx {:background-color "primary.main"
+                    :display "flex"
+                    :flex-direction "column"}
+               :py "1rem"
+               :mt "1rem"
+               :container true}
+      [:> Grid {:item true}
        [:> BottomNavigation {:showLabels true
                                  :sx {:background-color "primary.main"
                                       :margin "0 auto"
@@ -69,11 +86,24 @@
                             :aria-label "Facebook"
                             :target "_blank"
                             :class "text-slate-950 bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 focus:ring-4 text-sm"}
-             [:> mui-icons/Facebook "Facebook"]]])]
+             [:> mui-icons/Facebook "Facebook"]]])]]
+      [:> Grid {:item true}
        [:> Typography {:variant "body2"
-                       :align "center"
+                       :sx {:mt {:xs "0.5rem"
+                                 :md "0.5rem"}
+                            :pl {:xs "1rem"
+                                 :md "0rem"}
+                            :align {:xs "left"
+                                    :md "center"}
+                            :text-align {:md "center"}
+                            :font-size {:xs "0.6rem"
+                                        :md "1.2rem"}
+                            :word-wrap "break-word"
+                            :min-width "60%"
+                            :max-width {:sx "80%"
+                                        :md "100%"}}
                        :color "#f8fafc"}
-        "© 2024 Origens Tattoo Barber. Todos os direitos reservados."]]]))
+        "© 2024 Origens Tattoo Barber. Todos os direitos reservados."]]]]))
     
 
 
