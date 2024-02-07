@@ -56,27 +56,22 @@
 (defn recipe-info
   []
   (fn []
-    (let [{:recipe/keys [recipe_id uid]} @(rf/subscribe [:recipes/recipe])
-          {:keys [saved]} @(rf/subscribe [:recipes/user])
-          author? @(rf/subscribe [:recipe/author?])]
-      ^{:key recipe_id}
+    (let [{:recipe/keys [id]} @(rf/subscribe [:recipes/recipe])]
+      ^{:key id}
       [:> Grid {:item true}
        [:> Paper {:pb 4
                   :sx {:box-shadow 3
                        :max-width 600}
-
                   :direction "column"
-                  :class-name (when author?
-                                (str "transition hover:shadow-2xl hover:drop-shadow-2xl hover:-translate-y-1 ease-in-out delay-150 duration-500" "flex-wrap")
-                                "flex-wrap")}
+                  :class-name
+                    "flex-wrap"}
         [:> Grid {:item true :xs 12}
          [:> Grid {:container true
                    :p 2
                    :align-items "center"}
           [:> Typography {:variant "p"
                           :px 2
-                          :class-name "text-3xl decoration-2 text-slate-700"}
-           uid]]]
+                          :class-name "text-3xl decoration-2 text-slate-700"}]]]
         [recipe-img]
         [footer]]
        #_[ingredients]])))

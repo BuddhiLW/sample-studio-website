@@ -10,55 +10,52 @@
    [playground.recipes.views.request-to-cook :refer [request-to-cook]]
    [playground.router :as router]
    [playground.utilites :as util]
-   [re-frame.core :as rf]))
+   [re-frame.core :as rf]
+   [playground.gallery.views.gallery :refer [gallery]]))
 
 (defn recipe-page
   []
   (fn []
     (let [recipe @(rf/subscribe [:recipes/recipe])
-          author? @(rf/subscribe [:recipe/author?])
           active-nav @(rf/subscribe [:active-nav])
-          logged-in? @(rf/subscribe [:logged-in?])
-          chef? @(rf/subscribe [:auth/chef?])
           {:keys [name]} recipe]
       [:<>
        [page-nav {:left (if (active-nav :saved)
                           :saved
                           :recipes)
-                  :center (if author?
-                            [recipe-editor]
-                            [:> Typography {:variant "div"
-                                            :color "inherit"
-                                            :py 5
-                                            :justify-content "center"
-                                            :font-size "2.5rem"
-                                            :font-weight 700}
-                             name])
-                  :right (cond
-                           (not logged-in?)  [:> Button {:sx {:bgcolor (util/color [:green :500])}
-                                                         :href (router/path-for :sign-up)
-                                                         :on-click #(rf/dispatch [:set-active-nav :sign-up])}
-                                              "Sign up"]
-                           (not author?)    [request-to-cook]
-                           (and (not chef?) author?)  [:> Button {:variant "contained"
-                                                                  :sx {:bgcolor (util/color [:pink :400])}
-                                                                  :href (router/path-for :become-a-chef)
-                                                                  :on-click #(rf/dispatch [:set-active-nav :become-a-chef])}
-                                                       "Become a chef"]
-                           author?          [publish-recipe])}]
+                  :center [:> Typography {:variant "div"
+                                          :color "inherit"
+                                          :py 5
+                                          :justify-content "center"
+                                          :font-size "2.5rem"
+                                          :font-weight 700}
+                           name]}]
        [:> Grid {:container true
-                 :columns {:xs 6
-                           :sm 7
-                           :md 12}
-                 :spacing {:md 1}
-                 :direction {:sx "column"
-                             :xs "column"
-                             :sm "column"
-                             :md "row"}
-                 :justify-content {:sx "center"
-                                   :xs "center"
-                                   :sm "center"
-                                   :md "space-evenly"}
-                 :px 2}
-        [recipe-info]
-        [recipe-steps]]])))
+                 :width "100vw"
+                 :sx {:flex true
+                      :justify-content "space-between"
+                      :direction {:sx "column"
+                                  :xs "row"
+                                  :sm "row"
+                                  :md "row"}
+                      :my 3}}
+        [:> Grid {:item true
+                  :xs 12
+                  :sm 5
+                  :columns {:xs 6
+                            :sm 7
+                            :md 12}
+                  :justify-content {:sx "center"
+                                    :xs "center"}
+                  :px 2
+                  :py 2}
+         [recipe-info]]
+        [:> Grid {:xs 12
+                  :sm 6
+                  :item true
+                  :sx {:mx {:xs 1}
+                       :my {:xs 0
+                            :sm 2}
+                       :min-width "300px"}}
+         [gallery]]]])))
+

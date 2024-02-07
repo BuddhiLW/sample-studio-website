@@ -4,8 +4,8 @@
             [re-frame.core :as rf]))
 
 (def routes ["/sample-studio-website/" {""                   :about-us
-                                        "cursos/"           {"" :recipes
-                                                             [:recipe-id] :recipe}
+                                        "profissionais/"           {"" :recipes
+                                                                    [:recipe-id] :recipe}
                                         "galeria"           :gallery
                                         "comercializacao"   :log-in}])
                   ;; "inbox/"            {"" :inboxes

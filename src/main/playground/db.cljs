@@ -15,7 +15,36 @@
                                :active-modal  nil
                                :active-recipe nil
                                :active-inbox  nil}
-                     :recipes {}
+                     :recipes {:id-1 {:public true
+                                      :id :id-1
+                                      :name "Rafael Andrade"
+                                      :whatsapp "https://api.whatsapp.com/send?phone=5516981313890&text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Rafael%20Andrade%20Tattoo"
+                                      :instagram "https://www.instagram.com/rafaandradetattoo/"
+                                      :perfil "img/Fotos-Estudio/tatuadores/rafael-andrade/Rafael.jpg"}
+                               :id-2 {:public true
+                                      :id :id-2
+                                      :name "Pedro Nób"
+                                      :whatsapp "#"
+                                      :instagram "https://www.instagram.com/pedro_nob_016/"
+                                      :perfil "img/Fotos-Estudio/tatuadores/pedro-nob/perfil.jpg"}
+                               :id-3 {:public true
+                                      :id :id-3
+                                      :name "Tacio Lobato"
+                                      :whatsapp "https://api.whatsapp.com/send/?phone=5516997219901&text&type=phone_number&app_absent=0"
+                                      :instagram "https://www.instagram.com/tacio_lobato/"
+                                      :perfil "img/Fotos-Estudio/tatuadores/tacio-lobato/perfil.jpg"}
+                               :id-4 {:public true
+                                      :id :id-4
+                                      :name "Luciano Duarte"
+                                      :whatsapp "https: //l.instagram.com/?u=https%3A%2F%2Fwa.me%2F5516993510565&e=AT0NzhFsYI5Mr1NoN4Tvr-nu-EdvPGPAhh7peOQYBaFJwy5e0M-75psAhuNqihiuUtsNLdMfxrUKv1iPy585jE0QElz1VqPqkbVQR6wxoPGUKDIa0XARNA"
+                                      :instagram "https://www.instagram.com/lucianoduarteoficialtattoo?igsh=MTlid2lyNW9zNTJ6cg=="
+                                      :perfil "img/Fotos-Estudio/tatuadores/luciano-duarte/perfil.jpg"}
+                               :id-5 {:public true
+                                      :id :id-5
+                                      :name "Patrik Bonacio"
+                                      :whatsapp "https://wa.me/5516994605806"
+                                      :instagram "https://www.instagram.com/bonacinitattoo?igsh=eDQyOXV6cXB3OGJt"
+                                      :perfil "img/Fotos-Estudio/tatuadores/patrik-bonacio/perfil.jpg"}}
                      :users   {"mike@mailinator.com" {:uid     "mike@mailinator.com"
                                                       :profile {:first-name "Mike"
                                                                 :last-name  "Jordan"

@@ -48,7 +48,7 @@
  :filter/public
  :<- [:recipes]
  (fn [recipes _]
-   (filter #(= (:recipe/public %) true) (vals recipes))))
+   (vals recipes)))
 
 (rf/reg-sub
  :recipe/author?

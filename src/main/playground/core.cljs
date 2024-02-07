@@ -58,16 +58,16 @@
    ;--- footer ---
    [playground.footer.views.footer :refer [footer]]
    ;--- gallery ---
-   [playground.gallery.views.gallery :refer [gallery]]))
+   [playground.gallery.views.gallery :refer [gallery-page]]))
 
 ;; ---------- END requires ---------
 (defn pages
   [page-name]
   [:> mui/Box
     (case page-name
-      :sign-up           [sign-up]
-      :gallery           [gallery]
-      :log-in            [log-in]
+      :gallery           [gallery-page]
+      ;; :sign-up           [sign-up]
+      ;; :log-in            [log-in]
       :about-us          [about-us]
       :recipes           [recipes-page]
       :recipe            [recipe-page]
@@ -84,7 +84,6 @@
                     :sx {:max-width "100vw"
                          :min-height "100vh"
                          :overflow "hidden"
-                         ;; :flex-wrap "wrap"
                          :display "flex"
                          :flex-direction "column"}}
        [nav]

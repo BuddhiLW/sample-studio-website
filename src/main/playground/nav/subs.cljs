@@ -34,7 +34,9 @@
  :<- [:recipes]
  :<- [:nav/active-recipe]
  (fn [[recipes active-recipe] _]
+   (js/console.log "active-recipe: " (clj->js (get recipes active-recipe)))
    (get recipes active-recipe)))
+
 
 ;; (reg-sub
 ;;  :nav/active-page

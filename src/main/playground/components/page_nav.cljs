@@ -9,32 +9,33 @@
 (defn page-nav
   [{:keys [left center right]}]
   [:<>
-   [:> Box {:py 5
+   [:> Box {:py {:xs 1}
             :px 5
             :component "nav"
             :variant "dense"
             :fluid "false"
             :display "flex"
-            :justify-content "space-between"
             :container "true"
-            :align-items "center"}
+            :align-items "center"
+            :sx {:width "100%"
+                 :height {:xs "10rem"
+                          :sm "15rem"
+                          :md "20rem"}
+                 :justify-content {:sm "start"
+                                   :md "space-between"}}}
     [:> Box {:display "flex"
              :justify-content "flex-start"
              :py 1}
      (if left
-       [:> Button {:my "20"
+       [:> Button {:my {:xs 1
+                        :sm 2
+                        :md 20}
                    :variant "light"
                    :aria-label "Back"
                    :href (router/path-for left)}
          [:> ArrowCircleLeftRoundedIcon {:sx {:font-size "2.5rem"
                                               :color (get-in (js->clj colors :keywordize-keys true) [:pink :500])}}]]
-       [:> Button {:my "20"
-                   :variant "light"
-                   :aria-label "Back"}
-         #_[:> Avatar {:src "/img/logo-expedicao-cafe.jpg"
-                       :sx {:width 120
-                            :height 120}}]
-         #_[:> AdjustIcon {:sx {:font-size "2.5em"}}]])]
+       "")]
     [:> Box {:justify-content "center"
              :opacity 1}
      (if (= (type center) (type "String"))
@@ -43,7 +44,9 @@
                        :font-family "serif"
                        :color "inherit"
                        :py 5
-                       :font-weight 400}
+                       :font-weight 400
+                       :sx {:font-size {:xs "3rem"
+                                        :md "6rem"}}}
         center]
        center)]
     [:> Box
